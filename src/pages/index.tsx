@@ -4,145 +4,145 @@ import { Container, Heading, Link, Text } from 'theme-ui'
 import getStats, { Book, Stats } from '../lib/getStats'
 import pluralize from '../lib/pluralize'
 
+
 interface ValueCountProps {
-	value: number
-	singular: string
-	plural: string
+    value: number
+    singular: string
+    plural: string
 }
 
 const ValueCount: React.FC<ValueCountProps> = ({ value, singular, plural }) => (
-	<React.Fragment>
-		{value.toLocaleString()} {pluralize(value, singular, plural)}
-	</React.Fragment>
+    <React.Fragment>
+        {value.toLocaleString()} {pluralize(value, singular, plural)}
+    </React.Fragment>
 )
 
 interface FormattedBookProps {
-	book: Book
+    book: Book
 }
 
 const FormattedBook: React.FC<FormattedBookProps> = ({ book }) => (
-	<React.Fragment>
-		&ldquo;{book.name}&rdquo; by {book.author}
-	</React.Fragment>
+    <React.Fragment>
+        &ldquo;{book.name}&rdquo; by {book.author}
+    </React.Fragment>
 )
 
 interface BooksToSentenceProps {
-	books: Array<Book>
+    books: Array<Book>
 }
 
 const BooksToSentence: React.FC<BooksToSentenceProps> = ({ books }) => {
-	if (books.length === 1) return <FormattedBook book={books[0]} />
+    if (books.length === 1) return <FormattedBook book={books[0]} />
 
-	if (books.length === 2)
-		return (
-			<React.Fragment>
-				<FormattedBook book={books[0]} /> and <FormattedBook book={books[1]} />
-			</React.Fragment>
-		)
+    if (books.length === 2)
+        return (
+            <React.Fragment>
+                <FormattedBook book={books[0]} /> and <FormattedBook book={books[1]} />
+            </React.Fragment>
+        )
 
-	return (
-		<React.Fragment>
-			{books.map((book, index) => {
-				if (index === 0) return <FormattedBook book={book} />
+    return (
+        <React.Fragment>
+            {books.map((book, index) => {
+                if (index === 0) return <FormattedBook book={book} />
 
-				if (index + 1 === books.length) {
-					return (
-						<React.Fragment>
-							, and <FormattedBook book={book} />
-						</React.Fragment>
-					)
-				}
+                if (index + 1 === books.length) {
+                    return (
+                        <React.Fragment>
+                            , and <FormattedBook book={book} />
+                        </React.Fragment>
+                    )
+                }
 
-				return (
-					<React.Fragment key={book.name}>
-						, <FormattedBook book={book} />
-					</React.Fragment>
-				)
-			})}
-		</React.Fragment>
-	)
+                return (
+                    <React.Fragment key={book.name}>
+                        , <FormattedBook book={book} />
+                    </React.Fragment>
+                )
+            })}
+        </React.Fragment>
+    )
 }
 
 interface IndexProps {
-	stats: Stats
+    stats: Stats
 }
 
 const IndexPage: React.FC<IndexProps> = ({ stats }) => {
-	const {
-		commits = 0,
-		tweets = 0,
-		steps = 0,
-		places = 0,
-		songs = 0,
-		album = null,
-		books = [],
-	} = stats
+    const {
+        commits = 0,
+        tweets = 0,
+        steps = 0,
+        places = 0,
+        songs = 0,
+        album = null,
+        books = [],
+    } = stats
 
-	return (
-		<Container>
-			<Text as="p" variant="section-heading" mb={3}>
-				Introduction
-			</Text>
+    return (
+        <Container>
+            <Text as="p" variant="section-heading" mb={3}>
+                Introduction
+            </Text>
 
-			<Text as="div" variant="site-intro" sx={{ display: 'contents' }}>
-				<Heading as="h1" variant="site-intro" sx={{ fontWeight: 'bold' }}>
-					A letter to Microsoft&apos;s Azure
-					<Link href="/trade" sx={{ textDecoration: 'none' }}>
-						<span role="img" aria-label="palm tree emoji">🌴</span>
-					</Link> 
-				</Heading>
-				<br></br><br></br>
+            <Text as="div" variant="site-intro" sx={{ display: 'contents' }}>
+                <Heading as="h1" variant="site-intro" sx={{ fontWeight: 'bold' }}>
+                    A letter to Microsoft&apos;s Azure
+                    <Link href="/trade" sx={{ textDecoration: 'none' }}>
+                        <span role="img" aria-label="palm tree emoji">🌴</span>
+                    </Link>
+                </Heading>
+                <br /><br />
 
-				<Text as="p" variant="site-intro">
-					Hello! Microsoft,
-					<br></br>
-					<br></br>
-					Hope you&apos;re doing great!<br></br><br></br>
+                <Text as="p" variant="site-intro">
+                    Hey Farza,
+                    <br /><br />
+                    Hope you’re doing great!<br /><br />
 
-					Heard you needed some help with that electricity bill of yours?
-					<br></br>
-					<br></br>
-					Let me guess, those beefy GPU&apos;s is sucking more electricity than you&apos;d want it?
-					<br></br>
-					<br></br>
-					Oh! Wait, is it also actively blowing up your employee&apos;s ears and also giving them a heat stroke?
-					<br></br>
-					<br></br>
-					Well, Good Sir, what if I told you there&apos;s a system that can cut down the costs (especially in this economy), cool these servers, and not actively hunt down your employees?<br></br><br></br>
+                    I heard you’re putting together your dream team — love that. Thought I’d shoot my shot.
+                    <br /><br />
 
-					If you&apos;re up for it, I have two words:<br></br>
-					<b>Immersion Cooling</b>.<br></br><br></br>
+                    I’m Solomon, a senior in high school from India.
+                    <br /><br />
 
-					The idea is simple yet powerful—immerse entire server racks in a certain type of liquid that efficiently pulls heat away from the hardware.
-					<br></br>
-					<br></br>
-					Before you jump on me, trust me−I am not crazy, it works & I got proof (LaTeX included—because some stories are best told in equations)🫡
-					<br></br>
-					<br></br>
-					Read it <a href="https://docs.google.com/document/d/1tY8X07giti0q_EicZRikaBbr_Mz_49_M1UBKemJxldY/edit?usp=sharing">here</a> 👀
-					<br></br>
-					<br></br>
-					P.S. The source code for this site can be found <a href="https://github.com/solomonshalom/lettertomicrosoft.xyz">here</a>
-					<br></br>
-					<br></br>
-					With Warm Regards,
-					<br></br>
-					<a href="https://solomonlijo.com">Solomon Shalom Lijo</a>
-				</Text>
-			</Text>
-		</Container>
-	)
+                    Been building things since I got my first LEGO set — I loved stacking bricks, and eventually that turned into stacking code.
+                    <br /><br />
+
+                    Over the years, I got into a bunch of things, mostly tiny businesses.<br />
+                    Once imported die-cast cars from Italy through eBay and sold them here in India — that kicked it all off.<br />
+                    Built an <Link href="https://play.google.com/store/apps/details?id=ml.opmworkout.opm" target="_blank" rel="noopener">app inspired by One Punch Man</Link>, and launched an <Link href="https://opensea.io/collection/peeps-and-founders" target="_blank" rel="noopener">NFT collection</Link> <i>(we brought in models + used AI to create visuals for the NFTs — wild times)</i>. It didn’t hit the moon, but it was a blast!
+                    <br /><br />
+
+                    Used to be the <Link href="https://www.bbb.bot/" target="_blank" rel="noopener">CTO of a GovTech startup</Link> — learned a lot about systems, impact, and what it takes to build for the real world.
+                    <br /><br />
+
+                    Since then, I’ve just kept building.<br />
+                    Launched a <Link href="https://zxe.solomonlijo.com" target="_blank" rel="noopener">dev studio for micro-apps and landing pages</Link>, tried vibe coding, and even sold an app through it.
+                    <br /><br />
+
+                    Right now? I’m building an <Link href="https://justice.rest" target="_blank" rel="noopener">LLM-powered interface for the legal world</Link> and a community that brings together those deprived of justice with those who can deliver it — making the law accessible, human, and built for everyone.
+                    <br /><br />
+
+                    If I had to TLDR my experience so far: some projects took off, others didn’t — but I kept building, shipping, and learning.
+                    <br /><br />
+
+                    Peace,<br />
+                    <Link href="https://solomonlijo.com" target="_blank" rel="noopener">Solomon Shalom Lijo</Link>
+                </Text>
+            </Text>
+        </Container>
+    )
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-	const stats = await getStats()
+    const stats = await getStats()
 
-	return {
-		props: {
-			stats,
-		},
-		revalidate: 60 * 60, // revalidate at most once per hour
-	}
+    return {
+        props: {
+            stats,
+        },
+        revalidate: 60 * 60, // revalidate at most once per hour
+    }
 }
 
 export default IndexPage

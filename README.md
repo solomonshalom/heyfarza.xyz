@@ -7,8 +7,8 @@ Built upon Alec Lowes's v4 [Portfolio](https://github.com/lowmess/lowmess.com/tr
 ## Installing
 
 ```bash
-git clone https://github.com/solomonshalom/lettertomicrosoft.xyz
-cd lettertomicrosoft.xyz
+git clone https://github.com/solomonshalom/lettertofarza.xyz
+cd lettertofarza.xyz
 npm i
 ```
 
