@@ -1,0 +1,4 @@
+User-Agent: *
+Disallow: /
+
+Sitemap: https://lettertomicrosoft.xyz/sitemap.xml
