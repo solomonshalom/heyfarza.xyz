@@ -126,6 +126,9 @@ const IndexPage: React.FC<IndexProps> = ({ stats }) => {
                     If I had to TLDR my experience so far: some projects took off, others didn’t — but I kept building, shipping, and learning.
                     <br /><br />
 
+					 P.S. Super stoked to see what you build ;D 
+                     <br /><br />
+
                     Peace,<br />
                     <Link href="https://solomonlijo.com" target="_blank" rel="noopener">Solomon Shalom Lijo</Link>
                 </Text>
