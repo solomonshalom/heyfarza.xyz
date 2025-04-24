@@ -87,7 +87,7 @@ const IndexPage: React.FC<IndexProps> = ({ stats }) => {
 
             <Text as="div" variant="site-intro" sx={{ display: 'contents' }}>
                 <Heading as="h1" variant="site-intro" sx={{ fontWeight: 'bold' }}>
-                    A letter to Microsoft&apos;s Azure
+                    A letter to Farza
                     <Link href="/trade" sx={{ textDecoration: 'none' }}>
                         <span role="img" aria-label="palm tree emoji">🌴</span>
                     </Link>

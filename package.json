@@ -1,7 +1,7 @@
 {
   "name": "letter",
   "version": "4.3.0",
-  "description": "The home on the internet for letter",
+  "description": "The home on the internet for a letter",
   "scripts": {
     "start": "next dev",
     "prebuild": "node scripts/generate-sitemap",

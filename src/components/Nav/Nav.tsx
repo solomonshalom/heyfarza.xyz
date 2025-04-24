@@ -47,18 +47,6 @@ const Nav: React.FC<BoxProps> = ({ sx, ...props }) => {
 				<Logo />
 
 				<Flex sx={{ alignItems: 'center' }}>
-					<Flex as="ul">
-						<li>
-							<NavLink
-								href="/"
-								aria-current={pathname === '/' ? 'page' : null}
-								mr={[1, 2]}
-							>
-								Home
-							</NavLink>
-						</li>
-					</Flex>
-
 					<ColorModeToggle ml={[2, 3]} />
 				</Flex>
 			</Container>
